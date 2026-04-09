@@ -5,7 +5,7 @@ html {
 }
 
 :root {
-  --bg-dark: #000000;
+  --bg-dark: #2a2a2a;
   --primary-red: #E11D48;
   --accent-rose: #FB7185;
   --text-primary: #FFFFFF;
@@ -52,9 +52,20 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* Radial Glow Effects */
+@keyframes float-glow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
 .glow-bg {
   position: fixed;
   top: 0;
@@ -66,6 +77,7 @@ body {
     radial-gradient(circle at 50% -10%, rgba(225, 29, 72, 0.25) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(225, 29, 72, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 20% 50%, rgba(225, 29, 72, 0.05) 0%, transparent 40%);
+  animation: float-glow 20s ease-in-out infinite;
 }
 
 /* Typography */
@@ -92,12 +104,16 @@ h1, h2, h3, h4 {
   border-radius: 9999px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   border: none;
   font-size: 0.9375rem;
+}
+
+.btn:active {
+  transform: scale(0.95);
 }
 
 .btn-primary {
@@ -107,8 +123,8 @@ h1, h2, h3, h4 {
 
 .btn-primary:hover {
   background: #f43f5e;
-  transform: translateY(-1px);
-  box-shadow: 0 0 20px rgba(225, 29, 72, 0.3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(225, 29, 72, 0.4);
 }
 
 .btn-glass {
@@ -120,7 +136,8 @@ h1, h2, h3, h4 {
 
 .btn-glass:hover {
   background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Layout Utilities */

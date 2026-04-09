@@ -113,11 +113,11 @@ const Pricing = () => {
           align-items: baseline;
           margin-bottom: 1rem;
         }
-        .currency { font-size: 1.5rem; font-weight: 700; color: #A1A1AA; }
+        .currency { font-size: 1.5rem; font-weight: 700; color: var(--text-secondary); }
         .amount { font-size: 3.5rem; font-weight: 700; }
-        .period { color: #A1A1AA; font-size: 1rem; }
+        .period { color: var(--text-secondary); font-size: 1rem; }
         .plan-desc {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-size: 0.9375rem;
           margin-bottom: 2rem;
         }

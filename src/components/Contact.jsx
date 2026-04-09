@@ -14,11 +14,12 @@ const Contact = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
     whileInView: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.5 }
+      scale: 1,
+      transition: { type: "spring", stiffness: 80, damping: 20 }
     }
   };
 
@@ -109,7 +110,7 @@ const Contact = () => {
       <style jsx>{`
         .contact-section {
           padding: 100px 0;
-          background: #000;
+          background: linear-gradient(to bottom, transparent 0%, #000000 100%);
           position: relative;
           overflow: hidden;
         }
@@ -146,7 +147,7 @@ const Contact = () => {
           letter-spacing: -0.02em;
         }
         .section-subtitle {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-size: 1.1rem;
         }
 
@@ -192,7 +193,7 @@ const Contact = () => {
           margin-bottom: 2px;
         }
         .text-box p {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-size: 0.95rem;
         }
 
@@ -223,7 +224,7 @@ const Contact = () => {
         }
         .field-group label {
           font-size: 0.85rem;
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-weight: 500;
         }
         .field-group input, .field-group textarea {
@@ -232,12 +233,14 @@ const Contact = () => {
           padding: 0.8rem 1rem;
           border-radius: 10px;
           color: white;
-          transition: all 0.2s ease;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .field-group input:focus, .field-group textarea:focus {
           outline: none;
           border-color: #E11D48;
           background: rgba(225, 29, 72, 0.05);
+          box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+          transform: translateY(-2px);
         }
         .field-group textarea {
           height: 120px;

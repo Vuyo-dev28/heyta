@@ -37,11 +37,11 @@ const WhyChooseUs = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -30 },
     whileInView: { 
       opacity: 1, 
       x: 0,
-      transition: { duration: 0.5 }
+      transition: { type: "spring", stiffness: 60, damping: 15 }
     }
   };
 
@@ -88,13 +88,13 @@ const WhyChooseUs = () => {
           
           <motion.div 
             className="choose-visual glass"
-            initial={{ opacity: 0, scale: 0.9, x: 30 }}
+            initial={{ opacity: 0, scale: 0.95, x: 30 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ type: "spring", stiffness: 50, damping: 20 }}
           >
              <div className="visual-pattern"></div>
-             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop" alt="Telecom Tower" className="visual-img" />
+             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop" alt="Heyta Telecoms Cell Tower Infrastructure in South Africa" className="visual-img" />
           </motion.div>
         </div>
       </div>
@@ -120,15 +120,20 @@ const WhyChooseUs = () => {
           margin-bottom: 0.5rem;
         }
         .reason-desc {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-size: 0.9375rem;
           line-height: 1.6;
+        }
+        @keyframes float-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
         }
         .choose-visual {
           position: relative;
           height: 600px;
           border-radius: 32px;
           overflow: hidden;
+          animation: float-slow 8s ease-in-out infinite;
         }
         .visual-img {
           width: 100%;

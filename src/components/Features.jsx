@@ -5,46 +5,46 @@ import { motion } from 'framer-motion';
 const Features = () => {
   const features = [
     {
-      title: "Cabling Solutions",
-      description: "Fiber optics to copper wiring, ensuring reliable and fast data transmission.",
-      icon: <Layers className="text-red-500" />,
+      title: "Cell Phone Management",
+      description: "Cost saving analysis and management system implementation.",
+      icon: <Cpu className="text-red" />,
       size: "large",
       image: "https://images.unsplash.com/photo-1601343521361-82550993081e?w=800&auto=format&fit=crop"
     },
     {
       title: "Equipment Supply",
       description: "Top-quality telecom equipment from switches to wireless devices.",
-      icon: <Cpu className="text-rose-500" />,
+      icon: <Cpu className="text-red" />,
+      size: "small"
+    },
+    {
+      title: "Consultation",
+      description: "Tailored advice and solutions to meet unique business requirements.",
+      icon: <Target className="text-red" />,
+      size: "small"
+    },
+    {
+      title: "Microsoft Services",
+      description: "Sharepoint online, Power Apps, Automate, Dynamics 365 and Business Central.",
+      icon: <Globe className="text-red" />,
+      size: "medium"
+    },
+    {
+      title: "Signal Boosters",
+      description: "Cutting-edge solutions to enhance mobile and wireless coverage.",
+      icon: <Zap className="text-red" />,
+      size: "medium"
+    },
+    {
+      title: "Cabling Solutions",
+      description: "Fiber optics to copper wiring, ensuring reliable and fast data transmission.",
+      icon: <Layers className="text-red" />,
       size: "small"
     },
     {
       title: "System Management",
       description: "Regular system checks, updates, and troubleshooting services.",
-      icon: <Shield className="text-red-600" />,
-      size: "small"
-    },
-    {
-      title: "Signal Boosters",
-      description: "Cutting-edge solutions to enhance mobile and wireless coverage.",
-      icon: <Zap className="text-rose-400" />,
-      size: "medium"
-    },
-    {
-      title: "Microsoft Services",
-      description: "Sharepoint online, Power Apps, Automate, Dynamics 365 and Business Central.",
-      icon: <Globe className="text-red-400" />,
-      size: "medium"
-    },
-    {
-      title: "Consultation",
-      description: "Tailored advice and solutions to meet unique business requirements.",
-      icon: <Target className="text-rose-600" />,
-      size: "small"
-    },
-    {
-      title: "Cell Phone Management",
-      description: "Cost saving analysis and management system implementation.",
-      icon: <Cpu className="text-red-500" />,
+      icon: <Shield className="text-red" />,
       size: "small"
     }
   ];
@@ -60,11 +60,12 @@ const Features = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
     whileInView: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.5 }
+      scale: 1,
+      transition: { type: "spring", stiffness: 100, damping: 20 }
     }
   };
 
@@ -94,10 +95,6 @@ const Features = () => {
               key={index}
               variants={itemVariants}
               className={`feature-card glass ${feature.size}`}
-              whileHover={{ 
-                y: -5,
-                transition: { duration: 0.2 }
-              }}
             >
               <div className="card-top">
                 <div className="icon-wrapper">{feature.icon}</div>
@@ -124,7 +121,7 @@ const Features = () => {
           margin-bottom: 16px;
         }
         .section-subtitle {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-size: 1.125rem;
           max-width: 600px;
           margin: 0 auto;
@@ -146,9 +143,12 @@ const Features = () => {
           transition: transform 0.3s ease;
         }
         .feature-card:hover {
-          transform: translateY(-5px);
-          border-color: rgba(225, 29, 72, 0.3);
-          box-shadow: 0 10px 30px -10px rgba(225, 29, 72, 0.2);
+          transform: translateY(-5px) scale(1.02);
+          border-color: rgba(225, 29, 72, 0.4);
+          box-shadow: 0 10px 30px -10px rgba(225, 29, 72, 0.3);
+        }
+        .feature-card:hover .icon-wrapper {
+          transform: scale(1.1) rotate(5deg);
         }
         .large {
           grid-column: span 2;
@@ -169,13 +169,14 @@ const Features = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .feature-title {
           font-size: 1.5rem;
           margin-bottom: 1rem;
         }
         .feature-desc {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-size: 0.9375rem;
           line-height: 1.6;
         }

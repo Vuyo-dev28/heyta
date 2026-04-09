@@ -20,8 +20,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'nav-scrolled' : 'nav-transparent'}`}>
-      <div className="container">
+    <nav className={`navbar ${isScrolled ? 'nav-scrolled' : 'nav-transparent'}`}>
+      <div className="nav-inner">
         <div className="nav-container">
           {/* Logo Section */}
           <div className="nav-logo-group">
@@ -88,23 +88,27 @@ const Navbar = () => {
       </div>
 
       <style jsx>{`
-        nav {
+        .navbar {
           position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
+          top: 24px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-width: 1200px;
           z-index: 1000;
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 9999px;
         }
         .nav-transparent {
-          padding: 1.5rem 0;
-          background: transparent;
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .nav-scrolled {
-          padding: 1rem 0;
-          background: rgba(0, 0, 0, 0.8);
+          background: rgba(0, 0, 0, 0.85);
           backdrop-filter: blur(16px);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
         .nav-container {
           display: flex;
@@ -147,7 +151,7 @@ const Navbar = () => {
         }
 
         .nav-link {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-weight: 500;
           font-size: 0.95rem;
           text-decoration: none;
@@ -226,10 +230,20 @@ const Navbar = () => {
         }
         .w-full { width: 100%; justify-content: center; }
 
-        .container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 2rem;
+        .nav-inner {
+          width: 100%;
+          padding: 1rem 2rem;
+        }
+        @media (max-width: 1024px) {
+          .navbar {
+            top: 16px;
+            width: 92%;
+          }
+        }
+        @media (max-width: 768px) {
+          .nav-inner {
+            padding: 0.8rem 1.5rem;
+          }
         }
       `}</style>
     </nav>

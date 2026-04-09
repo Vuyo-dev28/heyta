@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import ClientLogos from './components/ClientLogos'
 import Features from './components/Features'
 import WhyChooseUs from './components/WhyChooseUs'
 import Industries from './components/Industries'
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <ClientLogos />
         <Features />
         <WhyChooseUs />
         <Industries />

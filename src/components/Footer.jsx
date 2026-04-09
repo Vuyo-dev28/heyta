@@ -88,12 +88,10 @@ const Footer = () => {
 
       <style jsx>{`
         .footer {
-          background: rgba(0, 1, 3, 0.5);
+          background: #000000;
           padding: 80px 0 40px;
-          margin-top: 100px;
         }
         .glass-top {
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
           backdrop-filter: blur(20px);
         }
         .footer-grid {
@@ -123,7 +121,7 @@ const Footer = () => {
           font-weight: 700;
         }
         .brand-tagline {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           font-size: 0.9375rem;
           max-width: 300px;
           line-height: 1.6;
@@ -134,7 +132,7 @@ const Footer = () => {
           gap: 1.25rem;
         }
         .social-link {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           transition: color 0.2s ease;
         }
         .social-link:hover {
@@ -156,7 +154,7 @@ const Footer = () => {
           gap: 0.75rem;
         }
         .link-group a {
-          color: #A1A1AA;
+          color: var(--text-secondary);
           text-decoration: none;
           font-size: 0.9375rem;
           transition: color 0.2s ease;
@@ -170,7 +168,7 @@ const Footer = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          color: #71717A;
+          color: var(--text-secondary);
           font-size: 0.875rem;
         }
         .bottom-links {

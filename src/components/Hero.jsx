@@ -8,8 +8,8 @@ const Hero = () => {
     visible: { 
       opacity: 1,
       transition: { 
-        staggerChildren: 0.15,
-        delayChildren: 0.2
+        staggerChildren: 0.1,
+        delayChildren: 0.1
       }
     }
   };
@@ -19,7 +19,12 @@ const Hero = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { 
+        type: "spring", 
+        stiffness: 80, 
+        damping: 15,
+        mass: 1 
+      }
     }
   };
 
@@ -97,7 +102,7 @@ const Hero = () => {
         }
         .hero-subtitle {
           font-size: 1.25rem;
-          color: #A1A1AA;
+          color: var(--text-secondary);
           max-width: 600px;
           margin: 0 auto 40px;
         }
@@ -127,119 +132,12 @@ const Hero = () => {
         }
         .stat-label {
           font-size: 0.875rem;
-          color: #A1A1AA;
+          color: var(--text-secondary);
         }
         .stat-divider {
           width: 1px;
           height: 40px;
           background: rgba(255,255,255,0.05);
-        }
-        .hero-visual {
-          width: 100%;
-          max-width: 1000px;
-          margin: 0 auto;
-          perspective: 1000px;
-        }
-        .visual-container {
-          height: 500px;
-          border-radius: 24px;
-          position: relative;
-          overflow: hidden;
-          box-shadow: 0 40px 100px -20px rgba(225, 29, 72, 0.3);
-          transform: rotateX(5deg);
-          border: 1px solid rgba(225, 29, 72, 0.2);
-          background: rgba(0,0,0,0.8);
-        }
-        .visual-glow {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80%;
-          height: 60%;
-          background: radial-gradient(circle at top, rgba(225, 29, 72, 0.3), transparent 70%);
-          z-index: 1;
-        }
-        .dashboard-mockup {
-          padding: 24px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          z-index: 2;
-        }
-        .mockup-header {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          margin-bottom: 24px;
-        }
-        .mockup-title {
-          font-size: 0.75rem;
-          color: #A1A1AA;
-          font-weight: 500;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-        }
-        .dots { display: flex; gap: 6px; }
-        .dots span { width: 10px; height: 10px; border-radius: 50%; background: rgba(225, 29, 72, 0.3); }
-        .mockup-content { display: flex; flex: 1; gap: 24px; }
-        .mockup-sidebar { 
-          width: 160px; 
-          background: rgba(225, 29, 72, 0.05); 
-          border-radius: 12px; 
-          border: 1px solid rgba(225, 29, 72, 0.1);
-          padding: 12px;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-        .sidebar-item {
-          font-size: 0.75rem;
-          color: #71717A;
-          padding: 8px;
-          border-radius: 6px;
-        }
-        .sidebar-item.active {
-          color: #E11D48;
-          background: rgba(225, 29, 72, 0.1);
-        }
-        .mockup-main { flex: 1; }
-        .mockup-rows { display: flex; flex-direction: column; gap: 16px; }
-        .row { 
-          height: 80px; 
-          background: rgba(225, 29, 72, 0.05); 
-          border-radius: 12px; 
-          border: 1px solid rgba(225, 29, 72, 0.1);
-          position: relative;
-          overflow: hidden;
-          padding: 16px;
-        }
-        .row-content {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          height: 100%;
-          position: relative;
-          z-index: 2;
-        }
-        .row-label {
-          font-size: 0.875rem;
-          color: #A1A1AA;
-        }
-        .row-value {
-          font-size: 1.25rem;
-          font-weight: 700;
-          color: #E11D48;
-        }
-        .row::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 30%;
-          background: linear-gradient(90deg, rgba(225, 29, 72, 0.2), transparent);
         }
 
         @media (max-width: 768px) {
@@ -247,7 +145,6 @@ const Hero = () => {
           .hero-stats { flex-direction: column; gap: 2rem; }
           .stat-divider { display: none; }
           .hero-actions { flex-direction: column; }
-          .visual-container { height: 300px; }
         }
       `}</style>
     </section>
