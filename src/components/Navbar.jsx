@@ -20,72 +20,69 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'nav-scrolled' : 'nav-transparent'}`}>
-      <div className="nav-inner">
-        <div className="nav-container">
-          {/* Logo Section */}
-          <div className="nav-logo-group">
-            <img src="/heyta_logo.png" alt="Heyta Telecoms" className="logo-img" />
-            <div className="nav-logo-text">
-              <span className="heyta">Heyta</span>
-              <span className="telecoms">Telecoms</span>
-            </div>
-          </div>
-
-          {/* Desktop Links (Right Aligned) */}
-          <div className="desktop-links">
-            {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="nav-link">
-                {link.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Mobile Toggle */}
-          <button className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-
-        {/* Full-Screen Mobile Menu Overlay */}
-        {isMobileMenuOpen && (
-          <div className="mobile-menu-overlay">
-            <div className="mobile-menu-header">
-              <div className="nav-logo-group">
-                <img src="/heyta_logo.png" alt="Heyta" className="logo-img-sm" />
-                <div className="nav-logo-text-sm">
-                  <span className="heyta">Heyta</span>
-                  <span className="telecoms">Telecoms</span>
-                </div>
+    <>
+      <nav className={`navbar ${isScrolled ? 'nav-scrolled' : 'nav-transparent'}`}>
+        <div className="nav-inner">
+          <div className="nav-container">
+            {/* Logo Section */}
+            <div className="nav-logo-group">
+              <img src="/heyta_logo.png" alt="Heyta Telecoms" className="logo-img" />
+              <div className="nav-logo-text">
+                <span className="heyta">Heyta</span>
+                <span className="telecoms">Telecoms</span>
               </div>
-              <button 
-                className="close-button"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <X size={32} />
-              </button>
             </div>
 
-            <div className="mobile-links-stack">
+            {/* Desktop Links (Right Aligned) */}
+            <div className="desktop-links">
               {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  className="mobile-menu-link" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
+                <a key={link.name} href={link.href} className="nav-link">
                   {link.name}
                 </a>
               ))}
             </div>
 
-            <div className="mobile-menu-footer">
-              <button className="btn btn-primary w-full">Sign Up</button>
-              <button className="btn btn-glass w-full">Log In</button>
-            </div>
+            {/* Mobile Toggle */}
+            <button className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
-        )}
-      </div>
+        </div>
+      </nav>
+
+      {/* Full-Screen Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu-overlay">
+          <div className="mobile-menu-header">
+            <div className="nav-logo-group">
+              <img src="/heyta_logo.png" alt="Heyta" className="logo-img-sm" />
+              <div className="nav-logo-text-sm">
+                <span className="heyta">Heyta</span>
+                <span className="telecoms">Telecoms</span>
+              </div>
+            </div>
+            <button 
+              className="close-button"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X size={32} />
+            </button>
+          </div>
+
+          <div className="mobile-links-stack">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className="mobile-menu-link" 
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         .navbar {
@@ -222,13 +219,7 @@ const Navbar = () => {
           transform: translateX(10px);
         }
 
-        .mobile-menu-footer {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          padding-bottom: 2rem;
-        }
-        .w-full { width: 100%; justify-content: center; }
+
 
         .nav-inner {
           width: 100%;
@@ -246,7 +237,7 @@ const Navbar = () => {
           }
         }
       `}</style>
-    </nav>
+    </>
   );
 };
 
