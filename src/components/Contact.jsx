@@ -110,7 +110,7 @@ const Contact = () => {
       <style jsx>{`
         .contact-section {
           padding: 100px 0;
-          background: linear-gradient(to bottom, transparent 0%, #000000 100%);
+          background: #2a2a2a;
           position: relative;
           overflow: hidden;
         }
@@ -193,7 +193,8 @@ const Contact = () => {
           margin-bottom: 2px;
         }
         .text-box p {
-          color: var(--text-secondary);
+          color: #FFFFFF;
+          opacity: 1;
           font-size: 0.95rem;
         }
 
@@ -230,6 +231,8 @@ const Contact = () => {
         .field-group input, .field-group textarea {
           background: rgba(255, 255, 255, 0.03);
           border: 1px solid rgba(255, 255, 255, 0.1);
+          filter: none;
+          opacity: 1;
           padding: 0.8rem 1rem;
           border-radius: 10px;
           color: white;

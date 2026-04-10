@@ -1,4 +1,3 @@
-import { Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -39,12 +38,7 @@ const Footer = () => {
               <span className="brand-name">Heyta Telecoms</span>
             </div>
             <p className="brand-tagline">High-quality, full turnkey solutions for businesses and organizations.</p>
-            <div className="social-links">
-              <a href="#" className="social-link"><Twitter size={20} /></a>
-              <a href="#" className="social-link"><Instagram size={20} /></a>
-              <a href="#" className="social-link"><Linkedin size={20} /></a>
-              <a href="#" className="social-link"><Github size={20} /></a>
-            </div>
+
           </motion.div>
 
           <div className="footer-links">
@@ -88,7 +82,7 @@ const Footer = () => {
 
       <style jsx>{`
         .footer {
-          background: #000000;
+          background: #2a2a2a;
           padding: 80px 0 40px;
         }
         .glass-top {

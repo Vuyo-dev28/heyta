@@ -86,15 +86,15 @@ const ClientLogos = () => {
           height: 60px;
           width: auto;
           object-fit: contain;
-          filter: grayscale(100%) brightness(1.5);
-          opacity: 0.6;
+          filter: none;
+          opacity: 1;
           transition: all 0.3s ease;
         }
         .client-name {
           font-weight: 600;
           font-size: 1.25rem;
-          color: var(--text-secondary);
-          opacity: 0.6;
+          color: #FFFFFF;
+          opacity: 1;
           transition: all 0.3s ease;
         }
         .client-logo:hover .client-logo-img {

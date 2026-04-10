@@ -51,12 +51,12 @@ const Hero = () => {
           </motion.p>
           
           <motion.div className="hero-actions" variants={itemVariants}>
-            <button className="btn btn-primary">
+            <a href="#services" className="btn btn-primary">
               Our Services <ArrowRight size={18} />
-            </button>
-            <button className="btn btn-glass">
+            </a>
+            <a href="#contact" className="btn btn-glass">
               Contact Us
-            </button>
+            </a>
           </motion.div>
 
           <motion.div className="hero-stats" variants={itemVariants}>
