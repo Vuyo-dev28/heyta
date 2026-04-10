@@ -5,7 +5,7 @@ import App from './App.jsx'
 import ComingSoon from './components/ComingSoon.jsx'
 
 // 🔥 Toggle here
-const isLive = false
+const isLive = true
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
