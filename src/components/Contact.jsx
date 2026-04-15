@@ -37,10 +37,10 @@ const Contact = () => {
           <p className="section-subtitle">We're here to help you revolutionize your telecoms infrastructure.</p>
         </motion.div>
 
-        <div className="contact-layout">
+        <div className="contact-layout centered">
           {/* Information Side */}
           <motion.div 
-            className="info-side"
+            className="info-grid"
             variants={containerVariants}
             initial="hidden"
             whileInView="whileInView"
@@ -55,54 +55,12 @@ const Contact = () => {
             </motion.div>
 
             <motion.div className="info-item glass" variants={itemVariants}>
-              <div className="icon-box"><Phone size={24} /></div>
-              <div className="text-box">
-                <h3>Call Us</h3>
-                <p>+27 (0) 12 345 6789</p>
-              </div>
-            </motion.div>
-
-            <motion.div className="info-item glass" variants={itemVariants}>
               <div className="icon-box"><MapPin size={24} /></div>
               <div className="text-box">
                 <h3>Visit Us</h3>
                 <p>Gauteng, South Africa</p>
               </div>
             </motion.div>
-          </motion.div>
-
-          {/* Form Side with Clear Separation */}
-          <motion.div 
-            className="form-side glass highlight"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <form className="contact-form">
-              <div className="field-row">
-                <div className="field-group">
-                  <label>Full Name</label>
-                  <input type="text" placeholder="John Doe" />
-                </div>
-                <div className="field-group">
-                  <label>Email</label>
-                  <input type="email" placeholder="john@example.com" />
-                </div>
-              </div>
-              <div className="field-group">
-                <label>Subject</label>
-                <input type="text" placeholder="How can we help?" />
-              </div>
-              <div className="field-group">
-                <label>Message</label>
-                <textarea placeholder="Your message..."></textarea>
-              </div>
-              <button type="button" className="btn btn-primary submit-btn">
-                Send Message
-                <Send size={18} />
-              </button>
-            </form>
           </motion.div>
         </div>
       </div>
@@ -141,8 +99,8 @@ const Contact = () => {
           border: 1px solid rgba(225, 29, 72, 0.2);
         }
         .section-title {
-          font-size: 3rem;
-          color: white;
+          font-size: 2.5rem;
+          color: #ffffff !important;
           margin-bottom: 1rem;
           letter-spacing: -0.02em;
         }
@@ -151,119 +109,44 @@ const Contact = () => {
           font-size: 1.1rem;
         }
 
-        .contact-layout {
-          display: grid;
-          grid-template-columns: 1fr 1.5fr;
-          gap: 3rem;
-          align-items: start;
+        .contact-layout.centered {
+          display: flex;
+          justify-content: center;
+          width: 100%;
         }
 
-        /* Info Side */
-        .info-side {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
+        .info-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          width: 100%;
+          max-width: 900px;
         }
+
         .info-item {
-          padding: 1.5rem;
-          border-radius: 1rem;
-          display: flex;
-          align-items: center;
-          gap: 1.5rem;
-          transition: transform 0.3s ease;
-        }
-        .info-item:hover {
-          transform: translateX(10px);
-          background: rgba(255, 255, 255, 0.05);
-        }
-        .icon-box {
-          width: 52px;
-          height: 52px;
-          background: rgba(225, 29, 72, 0.1);
-          color: #E11D48;
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: 1px solid rgba(225, 29, 72, 0.2);
-        }
-        .text-box h3 {
-          font-size: 1.1rem;
-          color: white;
-          margin-bottom: 2px;
-        }
-        .text-box p {
-          color: #FFFFFF;
-          opacity: 1;
-          font-size: 0.95rem;
-        }
-
-        /* Form Side */
-        .form-side {
-          padding: 3rem;
+          padding: 2rem;
           border-radius: 1.5rem;
-          background: rgba(255, 255, 255, 0.02);
-        }
-        .highlight {
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-        .contact-form {
           display: flex;
-          flex-direction: column;
+          align-items: center;
           gap: 1.5rem;
-        }
-        .field-row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1.5rem;
-        }
-        .field-group {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        .field-group label {
-          font-size: 0.85rem;
-          color: var(--text-secondary);
-          font-weight: 500;
-        }
-        .field-group input, .field-group textarea {
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          filter: none;
-          opacity: 1;
-          padding: 0.8rem 1rem;
-          border-radius: 10px;
-          color: white;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .field-group input:focus, .field-group textarea:focus {
-          outline: none;
-          border-color: #E11D48;
-          background: rgba(225, 29, 72, 0.05);
-          box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
-          transform: translateY(-2px);
-        }
-        .field-group textarea {
-          height: 120px;
-          resize: none;
-        }
-        .submit-btn {
-          padding: 1rem;
-          justify-content: center;
-          font-weight: 600;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        @media (max-width: 991px) {
-          .contact-layout {
+        .info-item:hover {
+          transform: translateY(-5px);
+          background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(225, 29, 72, 0.3);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+          .info-grid {
             grid-template-columns: 1fr;
           }
-          .field-row {
-            grid-template-columns: 1fr;
-          }
-          .form-side {
-            padding: 2rem;
+          .section-title {
+            font-size: 2.5rem;
           }
         }
       `}</style>

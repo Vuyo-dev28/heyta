@@ -43,6 +43,7 @@ const Industries = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <span className="subtitle">Expertise</span>
           <h2 className="section-title">Industries <span className="text-gradient">Served</span></h2>
           <p className="section-subtitle">Providing tailored telecom solutions to a wide range of sectors.</p>
         </motion.div>
@@ -80,6 +81,33 @@ const Industries = () => {
       </div>
 
       <style jsx>{`
+        .section-header {
+          text-align: center;
+          margin-bottom: 4rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .section-header .subtitle {
+          color: var(--primary-red);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 0.875rem;
+          display: block;
+          margin-bottom: 1rem;
+        }
+        .section-title {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          color: #ffffff !important;
+        }
+        .section-subtitle {
+          color: var(--text-secondary);
+          font-size: 1.125rem;
+          max-width: 600px;
+          margin: 0 auto;
+        }
         .industries-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);

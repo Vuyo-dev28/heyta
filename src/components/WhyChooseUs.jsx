@@ -38,8 +38,8 @@ const WhyChooseUs = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, x: -30 },
-    whileInView: { 
-      opacity: 1, 
+    whileInView: {
+      opacity: 1,
       x: 0,
       transition: { type: "spring", stiffness: 60, damping: 15 }
     }
@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
     <section className="section-padding" id="why-choose-us">
       <div className="container">
         <div className="choose-wrapper">
-          <motion.div 
+          <motion.div
             className="choose-content"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -60,8 +60,8 @@ const WhyChooseUs = () => {
             <p className="section-subtitle" style={{ margin: '0 0 40px 0' }}>
               Delivering innovation, quality, and reliability through expert management and support.
             </p>
-            
-            <motion.div 
+
+            <motion.div
               className="reasons-list"
               variants={containerVariants}
               initial="hidden"
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               {reasons.map((reason, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   variants={itemVariants}
                   className="reason-item"
@@ -85,21 +85,34 @@ const WhyChooseUs = () => {
               ))}
             </motion.div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="choose-visual glass"
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 50, damping: 20 }}
           >
-             <div className="visual-pattern"></div>
-             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop" alt="Heyta Telecoms Cell Tower Infrastructure in South Africa" className="visual-img" />
+            <div className="visual-pattern"></div>
+            <img src="/images/cabling/cabling_2.png" alt="Heyta Telecoms Cell Tower Infrastructure in South Africa" className="visual-img" />
           </motion.div>
         </div>
       </div>
 
       <style jsx>{`
+        .choose-content {
+          margin-bottom: 4rem;
+        }
+        .section-title {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          color: #ffffff !important;
+        }
+        .section-subtitle {
+          color: var(--text-secondary);
+          font-size: 1.125rem;
+          max-width: 600px;
+        }
         .choose-wrapper {
           display: grid;
           grid-template-columns: 1.2fr 1fr;

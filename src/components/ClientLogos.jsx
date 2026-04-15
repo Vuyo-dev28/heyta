@@ -5,7 +5,7 @@ const ClientLogos = () => {
     { name: "Hitachi", image: "/images/hitachi_logo.png", showName: false },
     { name: "Mago", image: "/images/mago_logo.png", showName: false },
     { name: "Marthinusen & Coutts", image: "/images/mandc_logo.png", showName: true },
-    { name: "QUEENS'S NEST FARMS", image: "/images/queens_logo.png", showName: true },
+    { name: "QUEENS NEST FARMS", image: "/images/queens_logo.png", showName: true },
   ];
 
   return (
@@ -35,16 +35,17 @@ const ClientLogos = () => {
       </div>
       <style jsx>{`
         .client-logos-section {
-          padding: 60px 0;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-          background: rgba(0, 0, 0, 0.1);
+          padding: 80px 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          background: #f5f5f5;
           overflow: hidden;
         }
         .clients-title {
           text-align: center;
-          font-size: 0.75rem;
-          letter-spacing: 0.15em;
-          color: var(--text-secondary);
+          font-size: 0.875rem;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          color: #2a2a2a;
           margin-bottom: 40px;
         }
         .marquee-container {
@@ -64,15 +65,15 @@ const ClientLogos = () => {
         }
         .marquee-container::before {
           left: 0;
-          background: linear-gradient(to right, var(--bg-dark), transparent);
+          background: linear-gradient(to right, #f5f5f5, transparent);
         }
         .marquee-container::after {
           right: 0;
-          background: linear-gradient(to left, var(--bg-dark), transparent);
+          background: linear-gradient(to left, #f5f5f5, transparent);
         }
         .marquee-track {
           display: flex;
-          gap: 80px;
+          gap: 100px;
           width: fit-content;
         }
         .client-logo {
@@ -83,42 +84,45 @@ const ClientLogos = () => {
           cursor: pointer;
         }
         .client-logo-img {
-          height: 60px;
+          height: 85px;
           width: auto;
           object-fit: contain;
-          filter: none;
-          opacity: 1;
+          filter: brightness(0.9);
+          opacity: 0.8;
           transition: all 0.3s ease;
         }
         .client-name {
-          font-weight: 600;
-          font-size: 1.25rem;
-          color: #FFFFFF;
-          opacity: 1;
+          font-weight: 700;
+          font-size: 1.5rem;
+          color: #2a2a2a;
+          opacity: 0.8;
           transition: all 0.3s ease;
         }
         .client-logo:hover .client-logo-img {
-          filter: grayscale(0%) brightness(1);
+          filter: brightness(1);
           opacity: 1;
         }
         .client-logo:hover .client-name {
-          color: #FFFFFF;
+          color: #E11D48;
           opacity: 1;
         }
         
         @media (max-width: 768px) {
+          .client-logos-section {
+            padding: 60px 0;
+          }
           .marquee-track {
-            gap: 40px;
+            gap: 50px;
           }
           .client-logo-img {
-            height: 40px;
+            height: 50px;
           }
           .client-name {
-            font-size: 1rem;
+            font-size: 1.125rem;
           }
           .marquee-container::before,
           .marquee-container::after {
-            width: 60px;
+            width: 80px;
           }
         }
       `}</style>

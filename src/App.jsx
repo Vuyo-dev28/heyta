@@ -8,6 +8,8 @@ import Industries from './components/Industries'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ComingSoon from './components/ComingSoon' // ✅ import it
+import Portfolio from './components/Portfolio'
+import Partners from './components/Partners'
 
 function App() {
   const isLive = true // 🔥 set to false to show coming soon
@@ -28,7 +30,9 @@ function App() {
         <ClientLogos />
         <Features />
         <WhyChooseUs />
+        <Portfolio />
         <Industries />
+        <Partners />
         <Contact />
       </main>
 

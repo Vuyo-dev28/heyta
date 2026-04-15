@@ -5,17 +5,36 @@ import { motion } from 'framer-motion';
 const Features = () => {
   const features = [
     {
-      title: "Cell Phone Management",
-      description: "Cost saving analysis and management system implementation.",
+      title: "GSM Management",
+      description: [
+        "Cost saving analysis",
+        "Management system implementation",
+        "Tariff optimisation",
+        "Daily / Weekly / Monthly reports",
+        "Cell phone supply"
+      ],
       icon: <Cpu className="text-red" />,
-      size: "large",
+      size: "medium",
       image: "https://images.unsplash.com/photo-1601343521361-82550993081e?w=800&auto=format&fit=crop"
     },
     {
-      title: "Equipment Supply",
-      description: "Top-quality telecom equipment from switches to wireless devices.",
+      title: "IT Equipment Supply ",
+      description: [
+        "Laptops",
+        "Desktops",
+        "Tablets",
+        "IT Peripheral",
+        "Tonner Cartridge",
+        "Laptop Bags",
+        "Headphones",
+        "Firewalls",
+        "AP",
+        "Switches",
+        "Server Racks",
+        "Servers"
+      ],
       icon: <Cpu className="text-red" />,
-      size: "small"
+      size: "medium"
     },
     {
       title: "Consultation",
@@ -37,7 +56,10 @@ const Features = () => {
     },
     {
       title: "Cabling Solutions",
-      description: "Fiber optics to copper wiring, ensuring reliable and fast data transmission.",
+      description: [
+        "Fibre optic",
+        "Network cables Cat6e"
+      ],
       icon: <Layers className="text-red" />,
       size: "small"
     },
@@ -61,8 +83,8 @@ const Features = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.95 },
-    whileInView: { 
-      opacity: 1, 
+    whileInView: {
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: { type: "spring", stiffness: 100, damping: 20 }
@@ -72,18 +94,19 @@ const Features = () => {
   return (
     <section className="section-padding" id="services">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <span className="subtitle">Our Services</span>
           <h2 className="section-title">Our <span className="text-gradient">Services</span></h2>
           <p className="section-subtitle">Comprehensive telecom solutions designed to meet the evolving needs of your business.</p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="bento-grid"
           variants={containerVariants}
           initial="hidden"
@@ -91,7 +114,7 @@ const Features = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {features.map((feature, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               variants={itemVariants}
               className={`feature-card glass ${feature.size}`}
@@ -99,7 +122,17 @@ const Features = () => {
               <div className="card-top">
                 <div className="icon-wrapper">{feature.icon}</div>
                 <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-desc">{feature.description}</p>
+                <div className="feature-desc">
+                  {Array.isArray(feature.description) ? (
+                    <ul className="feature-list">
+                      {feature.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>{feature.description}</p>
+                  )}
+                </div>
               </div>
               {feature.image && (
                 <div className="card-visual">
@@ -113,12 +146,16 @@ const Features = () => {
 
       <style jsx>{`
         .section-header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 4rem;
         }
         .section-title {
-          font-size: 3rem;
-          margin-bottom: 16px;
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          color: #ffffff !important;
         }
         .section-subtitle {
           color: var(--text-secondary);
@@ -129,7 +166,8 @@ const Features = () => {
         .bento-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: repeat(2, 300px);
+          grid-auto-rows: minmax(320px, auto);
+          grid-auto-flow: dense;
           gap: 1.5rem;
         }
         .feature-card {
@@ -137,10 +175,10 @@ const Features = () => {
           padding: 2rem;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
           overflow: hidden;
           position: relative;
           transition: transform 0.3s ease;
+          height: 100%;
         }
         .feature-card:hover {
           transform: translateY(-5px) scale(1.02);
@@ -179,6 +217,22 @@ const Features = () => {
           color: var(--text-secondary);
           font-size: 0.9375rem;
           line-height: 1.6;
+        }
+        .feature-list {
+          list-style: none;
+          padding-left: 0;
+        }
+        .feature-list li {
+          position: relative;
+          padding-left: 1.25rem;
+          margin-bottom: 0.25rem;
+        }
+        .feature-list li::before {
+          content: "•";
+          color: var(--primary-red);
+          position: absolute;
+          left: 0;
+          font-weight: bold;
         }
         .card-visual {
           position: absolute;

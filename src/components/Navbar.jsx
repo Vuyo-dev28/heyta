@@ -9,7 +9,9 @@ const Navbar = () => {
     { name: 'Home', href: '#' },
     { name: 'Services', href: '#services' },
     { name: 'Why Us', href: '#why-choose-us' },
+    { name: 'Portfolio', href: '#portfolio' },
     { name: 'Industries', href: '#industries' },
+    { name: 'Partners', href: '#partners' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -102,7 +104,7 @@ const Navbar = () => {
           border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .nav-scrolled {
-          background: rgba(0, 0, 0, 0.85);
+          background: rgba(50, 50, 50, 0.95);
           backdrop-filter: blur(16px);
           border: 1px solid rgba(255, 255, 255, 0.1);
           box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
