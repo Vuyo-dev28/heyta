@@ -37,7 +37,7 @@ const Contact = () => {
           <p className="section-subtitle">We're here to help you revolutionize your telecoms infrastructure.</p>
         </motion.div>
 
-        <div className="contact-layout centered">
+        <div className="contact-layout">
           {/* Information Side */}
           <motion.div 
             className="info-grid"
@@ -46,6 +46,14 @@ const Contact = () => {
             whileInView="whileInView"
             viewport={{ once: true }}
           >
+            <motion.div className="info-item glass" variants={itemVariants}>
+              <div className="icon-box"><Phone size={24} /></div>
+              <div className="text-box">
+                <h3>Call Us</h3>
+                <p>+27 12 345 6789</p>
+              </div>
+            </motion.div>
+
             <motion.div className="info-item glass" variants={itemVariants}>
               <div className="icon-box"><Mail size={24} /></div>
               <div className="text-box">
@@ -61,6 +69,41 @@ const Contact = () => {
                 <p>Gauteng, South Africa</p>
               </div>
             </motion.div>
+          </motion.div>
+
+          {/* Form Side */}
+          <motion.div
+            className="form-wrapper glass"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <form className="contact-form">
+              <div className="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div className="form-group">
+                <input type="email" placeholder="Your Email" required />
+              </div>
+              <div className="form-group">
+                <select required defaultValue="">
+                  <option value="" disabled>What do you need help with?</option>
+                  <option value="cloud-pbx">Cloud PBX & Telephony</option>
+                  <option value="fiber-connectivity">Fiber & Connectivity</option>
+                  <option value="technical-support">Technical Support</option>
+                  <option value="sales-inquiry">Sales Inquiry</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+              </div>
+              <button type="submit" className="submit-btn">
+                Send Message
+                <Send size={18} />
+              </button>
+            </form>
           </motion.div>
         </div>
       </div>
@@ -109,18 +152,17 @@ const Contact = () => {
           font-size: 1.1rem;
         }
 
-        .contact-layout.centered {
-          display: flex;
-          justify-content: center;
-          width: 100%;
+        .contact-layout {
+          display: grid;
+          grid-template-columns: 1fr 1.2fr;
+          gap: 4rem;
+          align-items: flex-start;
         }
 
         .info-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          width: 100%;
-          max-width: 900px;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
         }
 
         .info-item {
@@ -141,12 +183,105 @@ const Contact = () => {
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        @media (max-width: 768px) {
-          .info-grid {
+        .icon-box {
+          color: #E11D48;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(225, 29, 72, 0.1);
+          padding: 1rem;
+          border-radius: 1rem;
+        }
+
+        .text-box h3 {
+          color: white;
+          margin-bottom: 0.25rem;
+          font-size: 1.25rem;
+        }
+
+        .text-box p {
+          color: #a0a0a0;
+          margin: 0;
+        }
+
+        .form-wrapper {
+          padding: 3rem;
+          border-radius: 1.5rem;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group {
+          margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          width: 100%;
+          padding: 1rem 1.5rem;
+          background: rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 0.75rem;
+          color: white;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          box-sizing: border-box;
+        }
+
+        .form-group select {
+          appearance: none;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-position: right 1.5rem center;
+          background-size: 1em;
+        }
+
+        .form-group select option {
+          background: #2a2a2a;
+          color: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+          outline: none;
+          border-color: rgba(225, 29, 72, 0.5);
+          background: rgba(0, 0, 0, 0.3);
+        }
+
+        .submit-btn {
+          width: 100%;
+          padding: 1rem;
+          background: #E11D48;
+          color: white;
+          border: none;
+          border-radius: 0.75rem;
+          font-size: 1rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+          background: #be123c;
+          transform: translateY(-2px);
+        }
+
+        @media (max-width: 992px) {
+          .contact-layout {
             grid-template-columns: 1fr;
+            gap: 3rem;
           }
           .section-title {
             font-size: 2.5rem;
+          }
+          .form-wrapper {
+            padding: 2rem;
           }
         }
       `}</style>

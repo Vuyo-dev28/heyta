@@ -11,7 +11,7 @@ const Features = () => {
         "Management system implementation",
         "Tariff optimisation",
         "Daily / Weekly / Monthly reports",
-        "Cell phone supply"
+        "Device Supply"
       ],
       icon: <Cpu className="text-red" />,
       size: "medium",
@@ -20,18 +20,8 @@ const Features = () => {
     {
       title: "IT Equipment Supply ",
       description: [
-        "Laptops",
-        "Desktops",
-        "Tablets",
+        "Hardware",
         "IT Peripheral",
-        "Tonner Cartridge",
-        "Laptop Bags",
-        "Headphones",
-        "Firewalls",
-        "AP",
-        "Switches",
-        "Server Racks",
-        "Servers"
       ],
       icon: <Cpu className="text-red" />,
       size: "medium"
@@ -57,7 +47,7 @@ const Features = () => {
     {
       title: "Cabling Solutions",
       description: [
-        "Fibre optic",
+        "Network Cabling",
         "Network cables Cat6e"
       ],
       icon: <Layers className="text-red" />,
@@ -124,11 +114,11 @@ const Features = () => {
                 <h3 className="feature-title">{feature.title}</h3>
                 <div className="feature-desc">
                   {Array.isArray(feature.description) ? (
-                    <ul className="feature-list">
+                    <div className="feature-list">
                       {feature.description.map((item, i) => (
-                        <li key={i}>{item}</li>
+                        <div className="feature-item" key={i}>{item},</div>
                       ))}
-                    </ul>
+                    </div>
                   ) : (
                     <p>{feature.description}</p>
                   )}
@@ -219,20 +209,12 @@ const Features = () => {
           line-height: 1.6;
         }
         .feature-list {
-          list-style: none;
-          padding-left: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
         }
-        .feature-list li {
-          position: relative;
-          padding-left: 1.25rem;
+        .feature-item {
           margin-bottom: 0.25rem;
-        }
-        .feature-list li::before {
-          content: "•";
-          color: var(--primary-red);
-          position: absolute;
-          left: 0;
-          font-weight: bold;
         }
         .card-visual {
           position: absolute;

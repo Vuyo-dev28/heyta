@@ -17,7 +17,7 @@ const Partners = () => {
             <div className="icon-wrapper">
               <Share2 size={32} className="text-red" />
             </div>
-            <h2 className="section-title" style={{ color: '#000000' }}>Official <span className="text-gradient">Partners</span></h2>
+            <h2 className="section-title"><span style={{ color: 'gray' }}>Official</span> <span className="text-gradient">Partners</span></h2>
             <p className="section-subtitle text-dark">We collaborate with industry leaders to deliver the best telecommunications value to our clients.</p>
           </div>
 
