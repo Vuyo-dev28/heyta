@@ -4,6 +4,7 @@ const ClientLogos = () => {
   const clients = [
     { name: "Hitachi", image: "/images/hitachi_logo.png", showName: false },
     { name: "Mago", image: "/images/mago_logo.png", showName: false },
+    { name: "QUEENS NEST FARMS", image: "/images/donum_logo.png", showName: false },
     { name: "Marthinusen & Coutts", image: "/images/mandc_logo.png", showName: true },
     { name: "QUEENS NEST FARMS", image: "/images/queens_logo.png", showName: true },
   ];

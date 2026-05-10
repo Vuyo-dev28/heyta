@@ -3,10 +3,10 @@ import './Portfolio.css';
 
 const portfolioItems = [
   // Cabling Section (4 items)
-  { id: 1, title: 'Fibre Optic Infrastructure', category: 'Cabling', image: '/images/cabling/cabling_1.png' },
-  { id: 2, title: 'Industrial Network Cabling', category: 'Cabling', image: '/images/cabling/cabling_2.png' },
-  { id: 3, title: 'Server Room Organization', category: 'Cabling', image: '/images/cabling/cabling_3.png' },
-  { id: 4, title: 'Data Center Deployment', category: 'Cabling', image: '/images/cabling/cabling_4.png' },
+  { id: 1, title: 'Cabling', category: 'Cabling', image: '/images/cabling/cabling_1.png' },
+  { id: 2, title: 'Server cabinet repair', category: 'Cabling', image: '/images/cabling/cabling_2.png' },
+  { id: 3, title: 'Cabling Into Server Room', category: 'Cabling', image: '/images/cabling/cabling_3.png' },
+  { id: 4, title: 'Server Room', category: 'Cabling', image: '/images/cabling/cabling_4.png' },
   
   // Signal Boost Section (22 items)
   { id: 5, title: 'Signal Enhancement System', category: 'Signal Boost', image: '/images/signal/signal_1.png' },

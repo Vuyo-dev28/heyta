@@ -50,7 +50,7 @@ const Contact = () => {
               <div className="icon-box"><Phone size={24} /></div>
               <div className="text-box">
                 <h3>Call Us</h3>
-                <p>+27 12 345 6789</p>
+                <p>+27 79 954 4267</p>
               </div>
             </motion.div>
 
@@ -89,10 +89,13 @@ const Contact = () => {
               <div className="form-group">
                 <select required defaultValue="">
                   <option value="" disabled>What do you need help with?</option>
-                  <option value="cloud-pbx">Cloud PBX & Telephony</option>
-                  <option value="fiber-connectivity">Fiber & Connectivity</option>
-                  <option value="technical-support">Technical Support</option>
-                  <option value="sales-inquiry">Sales Inquiry</option>
+                  <option value="gsm-management">GSM Management</option>
+                  <option value="it-equipment">IT Equipment Supply</option>
+                  <option value="consultation">Consultation</option>
+                  <option value="microsoft-services">Microsoft Services</option>
+                  <option value="signal-boosters">Signal Boosters</option>
+                  <option value="cabling-solutions">Cabling Solutions</option>
+                  <option value="system-management">System Management</option>
                   <option value="other">Other</option>
                 </select>
               </div>
