@@ -11,7 +11,8 @@ const Features = () => {
         "Management system implementation",
         "Tariff optimisation",
         "Daily / Weekly / Monthly reports",
-        "Device Supply"
+        "Device Supply",
+         "IOT Sim Supplier (All Major Networks)"
       ],
       icon: <Cpu className="text-red" />,
       size: "medium",
