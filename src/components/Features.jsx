@@ -15,8 +15,7 @@ const Features = () => {
          "IOT Sim Supplier (All Major Networks)"
       ],
       icon: <Cpu className="text-red" />,
-      size: "medium",
-      image: "https://images.unsplash.com/photo-1601343521361-82550993081e?w=800&auto=format&fit=crop"
+      size: "medium"
     },
     {
       title: "IT Equipment Supply ",
