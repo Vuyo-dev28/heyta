@@ -58,7 +58,7 @@ const Contact = () => {
               <div className="icon-box"><Mail size={24} /></div>
               <div className="text-box">
                 <h3>Email Us</h3>
-                <p>info@heytatelecoms.co.za</p>
+                <p>info@heyta-telecoms.co.za</p>
               </div>
             </motion.div>
 
