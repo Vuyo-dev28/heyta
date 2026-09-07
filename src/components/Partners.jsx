@@ -25,7 +25,7 @@ const Partners = () => {
             <div className="partner-card centered">
               <div className="partner-logo-container">
                 <div className="partner-logo-box">
-                  <img src="/images/melon_logo.png" alt="Melon Mobile" className="partner-logo-img" />
+                  {/* <img src="/images/melon_logo.png" alt="Melon Mobile" className="partner-logo-img" /> */}
                 </div>
                 {/* <div className="partner-badge">Official Partner</div> */}
               </div>
